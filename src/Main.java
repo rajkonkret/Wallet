@@ -4,7 +4,10 @@ public class Main {
         Wallet wallet = new Wallet();
 
         wallet.addMoney(100, MoneyType.PLN);
+        wallet.addMoney(1001, MoneyType.PLN);
+        wallet.spendSomeMoney(980 , MoneyType.GR);
 
-        wallet.toPrint();
+        System.out.println(wallet.toPrint());
+
     }
 }

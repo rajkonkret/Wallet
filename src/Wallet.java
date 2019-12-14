@@ -44,9 +44,12 @@ public class Wallet {
     }
 
     String toPrint() {
-        return String.valueOf(moneyStatePln);
-        //return Double.toString(moneyStatePln);
-        // return " " + moneyStatePln;
+        return MoneyType.GR +": " + moneyStatePln*100 +"\n" +
+                MoneyType.PLN + ": " + moneyStatePln + "\n" +
+                MoneyType.KILO + ": " + moneyStatePln/1000.0;
+//        return String.valueOf(moneyStatePln);
+//        //return Double.toString(moneyStatePln);
+//        // return " " + moneyStatePln;
         //
     }
 }
