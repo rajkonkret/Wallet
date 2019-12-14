@@ -29,13 +29,13 @@ public class Wallet {
 
         switch (type) {
             case PLN:
-               spendMoney(money);
+                spendMoney(money);
                 break;
             case GR:
-                spendMoney(money/100.0);
+                spendMoney(money / 100.0);
                 break;
             case KILO:
-                spendMoney(money*1000);
+                spendMoney(money * 1000);
                 break;
             default:
                 System.out.println("Błędny rodzaj pieniądza");
@@ -44,16 +44,18 @@ public class Wallet {
     }
 
     String toPrint() {
-        return MoneyType.GR +": " + moneyStatePln*100 +"\n" +
+        int roundedGr = (int) Math.round(moneyStatePln * 100);
+        return MoneyType.GR + ": " + roundedGr + "\n" +
                 MoneyType.PLN + ": " + moneyStatePln + "\n" +
-                MoneyType.KILO + ": " + moneyStatePln/1000.0;
+                MoneyType.KILO + ": " + moneyStatePln / 1000.0;
 //        return String.valueOf(moneyStatePln);
 //        //return Double.toString(moneyStatePln);
 //        // return " " + moneyStatePln;
         //
     }
-    private void spendMoney(double moneyPLN){
-        if (moneyStatePln>= moneyPLN){
+
+    private void spendMoney(double moneyPLN) {
+        if (moneyStatePln >= moneyPLN) {
             moneyStatePln -= moneyPLN;
         } else {
             System.out.println("Brak kasy misiu\n");
