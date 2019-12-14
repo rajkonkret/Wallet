@@ -9,5 +9,8 @@ public class Main {
 
         System.out.println(wallet.toPrint());
 
+        wallet.spendSomeMoney(230980 , MoneyType.PLN);
+        System.out.println(wallet.toPrint());
+
     }
 }

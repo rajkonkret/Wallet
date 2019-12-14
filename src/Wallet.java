@@ -29,13 +29,13 @@ public class Wallet {
 
         switch (type) {
             case PLN:
-                moneyStatePln -= money;
+               spendMoney(money);
                 break;
             case GR:
-                moneyStatePln -= money / 100.0;
+                spendMoney(money/100.0);
                 break;
             case KILO:
-                moneyStatePln -= money * 1000.0;
+                spendMoney(money*1000);
                 break;
             default:
                 System.out.println("Błędny rodzaj pieniądza");
@@ -51,5 +51,12 @@ public class Wallet {
 //        //return Double.toString(moneyStatePln);
 //        // return " " + moneyStatePln;
         //
+    }
+    private void spendMoney(double moneyPLN){
+        if (moneyStatePln>= moneyPLN){
+            moneyStatePln -= moneyPLN;
+        } else {
+            System.out.println("Brak kasy misiu\n");
+        }
     }
 }
